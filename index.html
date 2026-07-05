@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnum Painting LLC | Professional Painters in St. John, IN</title>
+<meta name="description" content="Magnum Painting LLC provides interior, exterior, residential, and commercial painting services in St. John, IN and Northwest Indiana. Call for a free estimate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1c2b3a;
+    --navy-dark: #101a24;
+    --brick: #b5502f;
+    --brick-dark: #8f3d22;
+    --cream: #faf6f0;
+    --gray: #5d6b78;
+    --white: #ffffff;
+    --radius: 10px;
+    --shadow: 0 8px 24px rgba(16, 26, 36, 0.12);
+    font-size: 16px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--navy-dark);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, .logo-text {
+    font-family: 'Poppins', sans-serif;
+    color: var(--navy-dark);
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  img, svg { max-width: 100%; display: block; }
+
+  .container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background: var(--brick);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    z-index: 1000;
+    border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus {
+    left: 0;
+    top: 0;
+  }
+
+  /* Header */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid #e9e4dc;
+  }
+
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .logo-text span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--brick);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--brick);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+  .header-cta:hover, .header-cta:focus-visible {
+    background: var(--brick-dark);
+  }
+  .header-cta svg { width: 16px; height: 16px; }
+
+  nav.primary-nav {
+    display: none;
+  }
+  @media (min-width: 800px) {
+    nav.primary-nav {
+      display: flex;
+      gap: 1.75rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    nav.primary-nav a {
+      text-decoration: none;
+      color: var(--navy);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+    nav.primary-nav a:hover, nav.primary-nav a:focus-visible {
+      color: var(--brick);
+    }
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      linear-gradient(135deg, rgba(16,26,36,0.92), rgba(28,43,58,0.85)),
+      repeating-linear-gradient(45deg, #22323f 0 2px, #1c2b3a 2px 40px);
+    color: #fff;
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(181, 80, 47, 0.18);
+    border: 1px solid var(--brick);
+    color: #f2c9b8;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    width: fit-content;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #fff;
+    max-width: 20ch;
+  }
+
+  .hero p.lead {
+    font-size: 1.05rem;
+    color: #d6dde3;
+    max-width: 46ch;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn svg { width: 18px; height: 18px; }
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-primary {
+    background: var(--brick);
+    color: #fff;
+  }
+  .btn-primary:hover, .btn-primary:focus-visible {
+    background: var(--brick-dark);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border-color: rgba(255,255,255,0.5);
+    color: #fff;
+  }
+  .btn-outline:hover, .btn-outline:focus-visible {
+    border-color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: #c7cfd6;
+  }
+  .hero-trust li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    list-style: none;
+  }
+  .hero-trust ul { padding: 0; margin: 0; display: contents; }
+  .hero-trust svg { width: 16px; height: 16px; flex-shrink: 0; color: #f2c9b8; }
+
+  /* Section base */
+  section {
+    padding: 3.25rem 0;
+  }
+
+  .section-head {
+    max-width: 42rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-tag {
+    color: var(--brick);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-head h2 {
+    font-size: 1.65rem;
+    margin-top: 0.4rem;
+  }
+
+  .section-head p {
+    color: var(--gray);
+    margin-top: 0.6rem;
+  }
+
+  /* Services */
+  .services {
+    background: var(--cream);
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 620px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 980px) {
+    .service-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 1.6rem 1.4rem;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--brick);
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    color: var(--brick);
+    margin-bottom: 0.9rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card p {
+    color: var(--gray);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  @media (min-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+  }
+
+  .about-panel {
+    background: var(--navy);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .about-panel h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .specialty-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .specialty-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: #d8dee4;
+  }
+
+  .specialty-list svg {
+    width: 20px;
+    height: 20px;
+    color: #f2c9b8;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .about-text p {
+    color: var(--gray);
+  }
+
+  .service-area {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .service-area span {
+    background: var(--cream);
+    border: 1px solid #e3d9cc;
+    color: var(--navy);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+  }
+
+  /* Why choose us (in place of testimonials, no fabricated reviews) */
+  .why {
+    background: #fff;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 700px) {
+    .why-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .why-card {
+    padding: 1.5rem;
+    border: 1px solid #ece5da;
+    border-radius: var(--radius);
+    text-align: left;
+  }
+  .why-card svg {
+    width: 32px;
+    height: 32px;
+    color: var(--brick);
+    margin-bottom: 0.75rem;
+  }
+  .why-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .why-card p { color: var(--gray); font-size: 0.9rem; margin: 0; }
+
+  .new-note {
+    margin-top: 1.75rem;
+    background: var(--cream);
+    border-left: 4px solid var(--brick);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--navy);
+  }
+
+  /* Contact */
+  .contact {
+    background: var(--navy-dark);
+    color: #fff;
+  }
+
+  .contact .section-tag { color: #f2c9b8; }
+  .contact .section-head h2 { color: #fff; }
+  .contact .section-head p { color: #b9c2ca; }
+
+  .contact-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 800px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  .contact-item:last-child { margin-bottom: 0; }
+  .contact-item svg {
+    width: 22px;
+    height: 22px;
+    color: #f2c9b8;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+  .contact-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .contact-item a:hover, .contact-item a:focus-visible { color: #f2c9b8; }
+  .contact-item p { margin: 0; color: #c7cfd6; font-size: 0.92rem; }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .contact-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: #8b97a1; }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: 2px solid var(--brick);
+    outline-offset: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+  .form-note {
+    font-size: 0.8rem;
+    color: #9aa5ad;
+    margin-top: -0.3rem;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--navy-dark);
+    color: #9aa5ad;
+    padding: 2rem 0 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  @media (min-width: 700px) {
+    .footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d6dde3;
+    font-weight: 600;
+  }
+  .footer-brand svg { width: 24px; height: 24px; }
+  .wildcard-credit {
+    color: #6c7580;
+  }
+  .wildcard-credit a { color: #8fa0ac; text-decoration: none; }
+  .wildcard-credit a:hover { text-decoration: underline; }
+
+  @media (min-width: 700px) {
+    .hero h1 { font-size: 2.6rem; }
+    .hero p.lead { font-size: 1.15rem; }
+    .section-head h2 { font-size: 2rem; }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="#top" class="brand" aria-label="Magnum Painting LLC home">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="48" height="48" rx="10" fill="#1c2b3a"/>
+        <path d="M14 32L20 14H24L18 32H14Z" fill="#b5502f"/>
+        <path d="M22 32L28 14H32L26 32H22Z" fill="#faf6f0"/>
+        <rect x="10" y="34" width="28" height="3" rx="1.5" fill="#b5502f"/>
+      </svg>
+      <span class="logo-text">Magnum Painting<span>St. John, Indiana</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="tel:+12192670545">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>(219) 267-0545</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <span class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M12 2 15 8.5 22 9.5 17 14.5 18.2 21.5 12 18 5.8 21.5 7 14.5 2 9.5 9 8.5 12 2Z"/></svg>
+        Locally Owned &amp; Operated in St. John, IN
+      </span>
+      <h1>Reliable Interior &amp; Exterior Painting for Northwest Indiana Homes &amp; Businesses</h1>
+      <p class="lead">Magnum Painting LLC brings careful prep, quality finishes, and hands-on service to every project — from single rooms to full commercial buildouts. Get a free, no-pressure estimate today.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+12192670545">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call for a Free Estimate
+        </a>
+        <a class="btn btn-outline" href="#services">View Our Services</a>
+      </div>
+      <div class="hero-trust">
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21c-4.5-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-2.5 7-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Serving St. John &amp; Greater Lake County
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Owner-Operated Quality Control
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            Direct Phone Contact — No Call Centers
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">What We Do</span>
+        <h2>Painting Services Built Around Your Property</h2>
+        <p>Whether it's a single room refresh or a full commercial repaint, Magnum Painting handles the prep, protection, and finish work so the results hold up.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 3h6l1 5-2 2v9a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-9L8 8l1-5Z"/></svg>
+          <h3>Interior Painting</h3>
+          <p>Walls, trim, ceilings, and cabinetry — precise cutting-in and clean lines for a finish that looks professional room to room.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <h3>Exterior Painting</h3>
+          <p>Siding, trim, doors, and fascia painted with proper prep to stand up to Northwest Indiana's four-season weather.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M9 21v-6h6v6"/></svg>
+          <h3>Residential Painting</h3>
+          <p>From single-room updates to whole-house repaints, we work with homeowners to protect furniture, floors, and landscaping.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21V7l7-4 7 4v14"/><path d="M10 21v-6h4v6"/><path d="M17 21V11l4 2v8"/></svg>
+          <h3>Commercial Painting</h3>
+          <p>Offices, retail spaces, and small business properties painted on a schedule that minimizes disruption to your operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="section-tag">About Magnum Painting</span>
+        <h2>A Local Painter Who Shows Up and Sweats the Details</h2>
+        <p>Magnum Painting LLC is based right in St. John, Indiana, and takes on painting projects for homeowners and small businesses throughout the surrounding communities. As an owner-operated company, every job gets close attention — from surface prep and taping to the final coat.</p>
+        <p>We believe good painting is mostly about the parts nobody notices: the caulking, the sanding, the drop cloths, and the patience to do a second coat right. That's the standard we hold every project to, no matter the size.</p>
+        <div class="service-area">
+          <span>St. John</span>
+          <span>Schererville</span>
+          <span>Dyer</span>
+          <span>Crown Point</span>
+          <span>Highland</span>
+        </div>
+      </div>
+      <div class="about-panel">
+        <h3>Why Homeowners &amp; Businesses Choose Us</h3>
+        <ul class="specialty-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Meticulous attention to detail and quality finishes on every surface
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Owner-operated — direct communication, no middleman
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Rooted in St. John, IN with deep familiarity of the local area
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Straightforward estimates over the phone — call and talk directly with us
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Working With Us</span>
+        <h2>What to Expect From Magnum Painting</h2>
+        <p>We're a small, local operation — here's what that means for you day to day.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <h3>A Real Phone Call, Not a Script</h3>
+          <p>Call (219) 267-0545 and talk with the person who will actually oversee your project.</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Prep-First Approach</h3>
+          <p>Surfaces are cleaned, sanded, and taped before any paint goes on — the step that makes finishes last.</p>
+        </div>
+        <div class="why-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21c-4.5-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-2.5 7-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <h3>Genuinely Local</h3>
+          <p>Based in St. John and familiar with homes and businesses throughout Lake County.</p>
+        </div>
+      </div>
+      <p class="new-note">Magnum Painting LLC is newly online — this is our first website. We're happy to share references and discuss past work directly when you call for your estimate.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Request Your Free Painting Estimate</h2>
+        <p>Call us directly or send a quick message and we'll get back to you about your project.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <a href="tel:+12192670545">(219) 267-0545</a>
+              <p>Call for a free estimate</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21c-4.5-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-2.5 7-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Magnum+Painting+LLC+10263+Joliet+St+St+John+IN+46373" target="_blank" rel="noopener noreferrer">10263 Joliet St, St. John, IN 46373</a>
+              <p>Proudly serving St. John and Northwest Indiana</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div>
+              <p style="color:#fff; font-weight:600;">Painting Contractor</p>
+              <p>Interior · Exterior · Residential · Commercial</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-card contact-form" action="#" method="post">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(219) 000-0000" required>
+          </div>
+          <div>
+            <label for="details">Project Details</label>
+            <textarea id="details" name="details" rows="4" placeholder="Tell us about your interior, exterior, residential, or commercial project"></textarea>
+          </div>
+          <p class="form-note">Prefer to talk now? Call (219) 267-0545 directly.</p>
+          <button type="submit" class="btn btn-primary" style="justify-content:center; width:100%;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="48" height="48" rx="10" fill="#1c2b3a"/>
+        <path d="M14 32L20 14H24L18 32H14Z" fill="#b5502f"/>
+        <path d="M22 32L28 14H32L26 32H22Z" fill="#faf6f0"/>
+        <rect x="10" y="34" width="28" height="3" rx="1.5" fill="#b5502f"/>
+      </svg>
+      Magnum Painting LLC — St. John, IN
+    </div>
+    <p>&copy; 2026 Magnum Painting LLC. All rights reserved.</p>
+    <p class="wildcard-credit">Website sample by <a href="#" target="_blank" rel="noopener noreferrer">Wild Card Creative Co</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
